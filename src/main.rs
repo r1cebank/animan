@@ -33,10 +33,12 @@ fn main() {
             Arg::with_name("name")
                 .short("n")
                 .long("name")
+                .required(true)
                 .takes_value(true)
                 .help("Override the series name"),
         )
         .get_matches();
+
     if matches.is_present("path") {
         path = PathBuf::from(matches.value_of("path").unwrap());
     }
